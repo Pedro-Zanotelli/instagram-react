@@ -1,7 +1,5 @@
 # Instagram Clone
 
-Acesse em https://pedro-zanotelli.github.io/instagram-react/
-
 Este projeto é um clone simples de uma interface do Instagram, utilizando React para construção de componentes interativos como posts, curtidas, e gerenciamento de perfil do usuário.
 
 ## Funcionalidades
