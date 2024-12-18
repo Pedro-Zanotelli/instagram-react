@@ -29,6 +29,14 @@ body {
   cursor: pointer;
 }
 
+.aaa {
+
+}
+
+.vermelho {
+  color: red;
+}
+
 .navbar .container {
   width: 100%;
   max-width: 935px;

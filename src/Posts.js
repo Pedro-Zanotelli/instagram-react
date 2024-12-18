@@ -1,3 +1,5 @@
+import React from "react"
+
 export default function Posts() {
     const post = [
         {
@@ -17,7 +19,7 @@ export default function Posts() {
             altConteudo:"dog", 
             imgCurtida:"assets/img/adorable_animals.svg", 
             altCurtida:"adorable_animals", 
-            numero:"99.159"
+            numero:"99.158"
         },
 
         {
@@ -39,6 +41,43 @@ export default function Posts() {
 } 
 
 function Post({imgUsuario, nomeUsuario, imgConteudo, altConteudo, imgCurtida, altCurtida, numero}) {
+    const [icone, setIcone] = React.useState("bookmark-outline");
+
+    const [coracao, setCoracao] = React.useState("heart-outline");
+    const [classe, setClasse] = React.useState("");
+
+    const [atualizaNumero, setNumero] = React.useState(Number(numero))  
+    const [jaCurtiu, setJaCurtiu] = React.useState(false); 
+
+    function salvarPost() {
+        setIcone(prevIcone => prevIcone === "bookmark-outline" ? "bookmark" : "bookmark-outline")
+    }
+
+    function curtirPost() {
+        setCoracao(prevCoracao => {
+            if (prevCoracao === "heart-outline"){
+                setNumero(atualizaNumero + 0.001);
+                setJaCurtiu(true);
+                return "heart";
+            } else {
+                setNumero(atualizaNumero - 0.001); 
+                setJaCurtiu(false);
+                return "heart-outline";
+            }
+        })
+    
+        setClasse(prevClasse => prevClasse === "" ? "vermelho" : "")
+    }
+
+    function curtirPostImagem() {
+        if (!jaCurtiu) {
+            setNumero(atualizaNumero + 0.001);
+            setJaCurtiu(true);
+            }
+        setCoracao("heart");
+        setClasse("vermelho")
+    }
+
     return(
         <li className="post">
             <div className="topo">
@@ -52,25 +91,25 @@ function Post({imgUsuario, nomeUsuario, imgConteudo, altConteudo, imgCurtida, al
             </div>
 
             <div className="conteudo">
-                <img src={imgConteudo} alt={altConteudo}/>
+                <img onClick={curtirPostImagem} src={imgConteudo} alt={altConteudo}/>
             </div>
 
             <div className="fundo">
                 <div className="acoes">
                     <div>
-                        <ion-icon name="heart-outline"></ion-icon>
+                        <ion-icon onClick={curtirPost} name={coracao} class={`coracao ${classe}`}></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
                         <ion-icon name="paper-plane-outline"></ion-icon>
                     </div>
                     <div>
-                        <ion-icon name="bookmark-outline"></ion-icon>
+                        <ion-icon onClick={salvarPost} name={icone}></ion-icon>
                     </div>
                 </div>
 
                 <div className="curtidas">
                     <img src={imgCurtida} alt={altCurtida}/>
                     <div className="texto">
-                        Curtido por <strong>{altCurtida}</strong> e <strong>outras {numero} pessoas</strong>
+                        Curtido por <strong>{altCurtida}</strong> e <strong>outras {atualizaNumero} pessoas</strong>
                     </div>
                 </div>
             </div>
