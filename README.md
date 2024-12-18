@@ -30,12 +30,12 @@ Este projeto é um clone simples de uma interface do Instagram, utilizando React
 1. Clone o repositório:
 
    ```bash
-   git clone https://github.com/SEU_USUARIO/social-media-clone.git
+   git clone https://github.com/SEU_USUARIO/instagram-react.git
    
 2. Navegue até a pasta do projeto:
 
    ```bash
-   cd social-media-clone
+   cd instagram-react
 
 3. Instale as dependências:
 
