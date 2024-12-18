@@ -8,8 +8,8 @@ export default function Suggestions() {
     ]
 
     return(
-        <ul class="sugestoes">
-            <div class="titulo">
+        <ul className="sugestoes">
+            <div className="titulo">
                 Sugestões para você
                 <div>Ver tudo</div>
             </div>
@@ -21,16 +21,16 @@ export default function Suggestions() {
 
 function Suggestion({imagem, usuario, razao}) {
     return(
-        <li class="sugestao">
-            <div class="usuario">
+        <li className="sugestao">
+            <div className="usuario">
                 <img src={imagem} alt={usuario}/>
-                <div class="texto">
-                    <div class="nome">{usuario}</div>
-                    <div class="razao">{razao}</div>
+                <div className="texto">
+                    <div className="nome">{usuario}</div>
+                    <div className="razao">{razao}</div>
                 </div>
             </div>
 
-            <div class="seguir">Seguir</div>
+            <div className="seguir">Seguir</div>
         </li>
     )
 }

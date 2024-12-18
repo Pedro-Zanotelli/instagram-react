@@ -32,7 +32,7 @@ export default function Posts() {
     ]
 
     return(
-        <ul class="posts">
+        <ul className="posts">
             {post.map((p, i) => <Post imgUsuario={p.imgUsuario} nomeUsuario={p.nomeUsuario} imgConteudo={p.imgConteudo} altConteudo={p.altConteudo} imgCurtida={p.imgCurtida} altCurtida={p.altCurtida} numero={p.numero} key={i}/>)}
         </ul>
     )
@@ -40,23 +40,23 @@ export default function Posts() {
 
 function Post({imgUsuario, nomeUsuario, imgConteudo, altConteudo, imgCurtida, altCurtida, numero}) {
     return(
-        <li class="post">
-            <div class="topo">
-                <div class="usuario">
+        <li className="post">
+            <div className="topo">
+                <div className="usuario">
                     <img src={imgUsuario} alt={nomeUsuario}/>
                     {nomeUsuario}
                 </div>
-                <div class="acoes">
+                <div className="acoes">
                     <ion-icon name="ellipsis-horizontal"></ion-icon>
                 </div>
             </div>
 
-            <div class="conteudo">
+            <div className="conteudo">
                 <img src={imgConteudo} alt={altConteudo}/>
             </div>
 
-            <div class="fundo">
-                <div class="acoes">
+            <div className="fundo">
+                <div className="acoes">
                     <div>
                         <ion-icon name="heart-outline"></ion-icon>
                         <ion-icon name="chatbubble-outline"></ion-icon>
@@ -67,9 +67,9 @@ function Post({imgUsuario, nomeUsuario, imgConteudo, altConteudo, imgCurtida, al
                     </div>
                 </div>
 
-                <div class="curtidas">
+                <div className="curtidas">
                     <img src={imgCurtida} alt={altCurtida}/>
-                    <div class="texto">
+                    <div className="texto">
                         Curtido por <strong>{altCurtida}</strong> e <strong>outras {numero} pessoas</strong>
                     </div>
                 </div>

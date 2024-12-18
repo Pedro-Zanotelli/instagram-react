@@ -11,10 +11,10 @@ export default function Stories() {
     ]
     
     return(
-        <ul class="stories">
+        <ul className="stories">
             {story.map(s => <Story imagem={s.imagem} usuario={s.usuario} key={s.usuario}/>)}
             
-            <div class="setinha">
+            <div className="setinha">
                 <ion-icon name="chevron-forward-circle"></ion-icon>
             </div>
         </ul>
@@ -23,11 +23,11 @@ export default function Stories() {
 
 function Story({imagem, usuario}) {
     return(
-        <li class="story">
-            <div class="imagem">
+        <li className="story">
+            <div className="imagem">
                 <img src={imagem} alt={usuario}/>
             </div>
-            <div class="usuario">
+            <div className="usuario">
                 {usuario}
             </div>
         </li>
