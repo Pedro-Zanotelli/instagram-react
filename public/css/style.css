@@ -305,3 +305,6 @@ ion-icon {
   color: black;
 }
 
+.usuario img {
+  border-radius: 50%;
+}
